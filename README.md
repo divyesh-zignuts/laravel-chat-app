@@ -20,6 +20,7 @@
 2) copy mailtrap credentials and past in your .env files
 ## Make Mail Notification
 1) php artisan make:notification NewUserNotification
+
     MAIL_MAILER=smtp
     MAIL_HOST=smtp.mailtrap.io
     MAIL_PORT=2525
