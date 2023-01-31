@@ -18,17 +18,20 @@
 ## Mail Configration
 1) sign-In/sign-up mailtrap https://mailtrap.io/signin 
 2) copy mailtrap credentials and past in your .env files
+
+1)MAIL_MAILER=smtp
+2)MAIL_HOST=smtp.mailtrap.io
+3)MAIL_PORT=2525
+4)MAIL_USERNAME=xxxxxxxxxx
+5)MAIL_PASSWORD=xxxxxxxxxxxxx
+6)MAIL_ENCRYPTION=tls
+7)MAIL_FROM_ADDRESS=xxxxx@gmail.com
+8)MAIL_FROM_NAME="${APP_NAME}"
+
 ## Make Mail Notification
 1) php artisan make:notification NewUserNotification
 
-    MAIL_MAILER=smtp
-    MAIL_HOST=smtp.mailtrap.io
-    MAIL_PORT=2525
-    MAIL_USERNAME=xxxxxxxxxx
-    MAIL_PASSWORD=xxxxxxxxxxxxx
-    MAIL_ENCRYPTION=tls
-    MAIL_FROM_ADDRESS=xxxxx@gmail.com
-    MAIL_FROM_NAME="${APP_NAME}"
+
 
 ## Broadcast Event setup 
 1)create new laravel project 
