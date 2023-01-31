@@ -1,0 +1,51 @@
+//message created response
+
+array (
+    'contact' => 
+    array (
+      'attributes' => 
+      array (
+      ),
+      'createdDatetime' => '2022-02-07T08:25:51Z',
+      'customDetails' => 
+      array (
+      ),
+      'displayName' => '+919727343419',
+      'firstName' => NULL,
+      'href' => NULL,
+      'id' => '2fa61c107b934e61b9aa2eb0d7ca49cf',
+      'lastName' => NULL,
+      'msisdn' => 919727343419,
+      'updatedDatetime' => '2022-02-07T08:25:51Z',
+    ),
+    'conversation' => 
+    array (
+      'contactId' => '2fa61c107b934e61b9aa2eb0d7ca49cf',
+      'createdDatetime' => '2022-02-07T08:25:51Z',
+      'id' => '2564bf9b26bc498ab0cb60ae04ae15a5',
+      'lastReceivedDatetime' => '2022-04-22T09:06:20.677456765Z',
+      'lastUsedChannelId' => 'bc234e20d61d4fb481d5b929487a9335',
+      'lastUsedPlatformId' => 'whatsapp',
+      'status' => 'active',
+      'updatedDatetime' => '2022-04-22T04:46:52.910768898Z',
+    ),
+    'message' => 
+    array (
+      'channelId' => 'bc234e20d61d4fb481d5b929487a9335',
+      'content' => 
+      array (
+        'text' => 'Test',
+      ),
+      'conversationId' => '2564bf9b26bc498ab0cb60ae04ae15a5',
+      'createdDatetime' => '2022-04-22T09:06:20.677456765Z',
+      'direction' => 'received',
+      'from' => '+919727343419',
+      'id' => 'df09ac39e7c04b7e907d93ceaeb133ba',
+      'platform' => 'whatsapp',
+      'status' => 'received',
+      'to' => '+971569142694',
+      'type' => 'text',
+      'updatedDatetime' => '2022-04-22T09:06:20Z',
+    ),
+    'type' => 'message.created',
+  )

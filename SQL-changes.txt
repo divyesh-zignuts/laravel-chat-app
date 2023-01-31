@@ -1,0 +1,49 @@
+Date 07-02-2022
+=================
+Table name : mine_conversation
+
+ALTER TABLE `mine_conversations` ADD `first_name` VARCHAR(255) NULL AFTER `customer_id`, ADD `last_name` VARCHAR(255) NULL AFTER `first_name`, ADD `email` VARCHAR(255) NULL AFTER `last_name`, ADD `phone` VARCHAR(20) NULL AFTER `email`, ADD `lead_quality` VARCHAR(255) NULL AFTER `phone`, ADD `lead_rating` VARCHAR(255) NULL AFTER `lead_quality`;
+
+
+====================
+Date 07-02-2022
+=================
+Table name : exception_management
+
+CREATE TABLE `exception_management` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stack_trace` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `line` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `header_info` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `ip` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1
+
+====================
+Date 10-02-2022
+=================
+Table name : conversations
+
+
+CREATE TABLE `conversations` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `conversation_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contactId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contactDetails` text COLLATE utf8mb4_unicode_ci,
+  `lastMessageId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastMessage` text COLLATE utf8mb4_unicode_ci,
+  `platform` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `direction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `displayName` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastReceivedDatetime` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
