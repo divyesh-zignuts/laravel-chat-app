@@ -67,31 +67,42 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 ## Broadcast Event setup 
-1)Install composer require predis/predis
+1)create new laravel project 
 
-2)change BROADCAST_DRIVER=log to BROADCAST_DRIVER=redis in .env file
+2)install redis server
 
-3)run this command npm install --save socket.io-client laravel-echo
+3)install redis package
+composer require predis/predis
 
-4)run npm install command
+4)update redis configration in config/database.php file
+'redis' => [
+ 
+    'client' => env('REDIS_CLIENT', 'predis'),
+ 
+    'default' => [
+        'host' => env('REDIS_HOST', '127.0.0.1'),
+        'password' => env('REDIS_PASSWORD'),
+        'port' => env('REDIS_PORT', 6379),
+        'database' => env('REDIS_DB', 0),
+    ],
+ 
+    'cache' => [
+        'host' => env('REDIS_HOST', '127.0.0.1'),
+        'password' => env('REDIS_PASSWORD'),
+        'port' => env('REDIS_PORT', 6379),
+        'database' => env('REDIS_CACHE_DB', 1),
+    ],
+ 
+],
 
-5) setup Echo configration in resources\js\bootstrap.js file
+5)npm install -g laravel-echo-server
 
-    import Echo from "laravel-echo"
-        
-    window.Echo = new Echo({
-        broadcaster: 'socket.io',
-        host: 'http://127.0.0.1:6001' //set your own hostname
-    });
+6)npm install
+7)npm install laravel-echo
+8)npm install socket.io-client
 
-6) change redis client and prefix in config\database.php file
+9)laravel-echo-server init
 
-    From
-    'client' => env('REDIS_CLIENT', 'phpredis'),
-    'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
-            
-    To
-    'client' => env('   ', 'predis')
-    'prefix' => env('REDIS_PREFIX',''),
-
-7) laravel-echo-server.json file change authHost configration.
+10)Run below command in command line
+-> redis-server
+-> laravel-echo-server start
